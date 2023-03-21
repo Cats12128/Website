@@ -2,9 +2,13 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def index():
-  return render_template("index.html",addtitle="Home")
+  indexTextFile = open("static/index.txt", "r")
+  indextext = indexTextFile.read()
+  indexTextFile.close()
+  return render_template("index.html",addtitle="Home", indextext=indextext)
 
 @app.route("/gallery")
 def gallery():
@@ -18,6 +22,9 @@ def about():
 def contact():
   return render_template("contact.html", addtitle="Contact")
 
+@app.route("/test")
+def test():
+  return render_template("test.html", addtitle="Testing")
 
 #if __name__ == "__main__":
 app.run(host="0.0.0.0", debug=True)
