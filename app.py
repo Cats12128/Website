@@ -2,13 +2,23 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+logo = "static/sun.svg"
+facebookUrl = "https://www.google.com" #be sure to include https://
+twitterUrl = ""
+instagramUrl = ""
+
+
+
+@app.context_processor
+def injectVariables():
+  return dict(facebookUrl=facebookUrl, twitterUrl=twitterUrl, instagramUrl=instagramUrl)
 
 @app.route("/")
 def index():
   indexTextFile = open("static/index.txt", "r")
   indextext = indexTextFile.read()
   indexTextFile.close()
-  return render_template("index.html",addtitle="Home", indextext=indextext)
+  return render_template("index.html", addtitle="Home", indextext=indextext, logo=logo)
 
 @app.route("/gallery")
 def gallery():

@@ -1,37 +1,65 @@
 <!doctype html>
 <html lang="en-US">
+  
   <head>
+    <!--bootstrap stuff below-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link href="../static/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!--<link href="../static/styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-       <title>JKI - {{addtitle}}</title>
+    <!--bootstrap stuff above-->
+    <link href="symbols.css" rel="stylesheet">
+    <title>JKI - {{addtitle}}</title>
   </head>
+
   <body>
+    <!--bootstrap stuff below-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-      <symbol id="sunicon" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-    </svg>
+    <!--bootstrap stuff above-->
+    {% include "symbols.css" %}
+<!--header below-->       
+    <nav class="navbar navbar-expand-sm bg-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand justify-content-center" href="google.com"><svg class="bi bi-sun" width="30" height="40"><use xlink:href="#sun"/></svg>
+      JKI - Your Screen Guy
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
+        <a class="nav-link" href="/gallery">Gallery</a>
+        <a class="nav-link" href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</nav>
+      
     
-    <div class="container">
-      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-          <svg class="bi me-2" width="30" height="30"><use xlink:href="#sunicon"/></svg>
-          <span class="fs-3">JKI</span>
-        </a>
-
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="/gallery" class="nav-link">Gallery</a></li>
-        <li class="nav-item"><a href="/contact" class="nav-link">Contact Us</a></li>
-        <li class="nav-item"><a href="/test" class="nav-link">Test</a></li>
-      </ul>
-      </header>   
+<!--header above-->       
     </div>
     {% block body %}{% endblock %}
+    {% include "form.html"%}
   </body>
+<!--footer below-->
+<div class="container mby-5">
+  <div class="row d-flex align-items-center">
+    <nav class="navbar fixed-bottom d-flex flex-wrap justify-content-between align-items-center border-top align-">
+      <div class="col-12 d-flex justify-content-center">
+      <a class="text-muted" href="{{facebookUrl}}"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a>
+      </div>
+      <div class="row col-12 mt-2 d-flex justify-content-center">
+        <span class="p-2 justify-content-center">&copy; JKI</span>
+      </div>
+  </footer>
+    
+        
+<!-- No twitter or insta ATM
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
+-->
+        </ul>
+      </nav>
+    
+  </div>
+
 </html>
