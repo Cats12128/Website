@@ -4,12 +4,15 @@
     <div class="container text-center d-flex flex-wrap p-3">
       <div class="row">
         <div class="col">
-          {{indextext}}
+          {% include "indextext.html"%}
         </div>
         <div class="col-md-6">
-          <img src="static/screenpic.jpg" class="img-fluid rounded" alt="Patio Picture">
+          <img src="static/screenpic.jpg" class="img-fluid rounded my-3" alt="Patio Picture">
         </div>
       </div>
+    </div>
+    <div>
+      {% include "form.html"%}
     </div>
     {% endblock %}
   </body>

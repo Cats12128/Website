@@ -2,29 +2,35 @@
 <html lang="en-US">
   
   <head>
-    <!--bootstrap stuff below-->
+<!--bootstrap stuff below-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--bootstrap stuff above-->
-    <link href="symbols.css" rel="stylesheet">
+    
+<!--bootstrap stuff above-->
+    
     <title>JKI - {{addtitle}}</title>
   </head>
 
   <body>
-    <!--bootstrap stuff below-->
+    
+<!--bootstrap stuff below-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <!--bootstrap stuff above-->
-    {% include "symbols.css" %}
-<!--header below-->       
-    <nav class="navbar navbar-expand-sm bg-dark" data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand justify-content-center" href="google.com"><svg class="bi bi-sun" width="30" height="40"><use xlink:href="#sun"/></svg>
-      JKI - Your Screen Guy
-    </a>
+<!--bootstrap stuff above-->    
+    {% include "symbols.html" %}
+    
+  </body>
+<!--begin top nav-->        
+<nav class="navbar navbar-expand-sm bg-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+    
+    <a class="navbar-brand" href="/"><svg class="bi bi-sun" width="30" height="40"><use xlink:href="#sun"/></svg>JKI - Your Screen Guy</a>
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+  <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+  
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="/">Home</a>
         <a class="nav-link" href="/gallery">Gallery</a>
@@ -33,33 +39,24 @@
     </div>
   </div>
 </nav>
-      
-    
-<!--header above-->       
-    </div>
+<!--end top nav--> 
     {% block body %}{% endblock %}
-    {% include "form.html"%}
-  </body>
+    <script src="static/masking.js"></script>
 <!--footer below-->
-<div class="container mby-5">
-  <div class="row d-flex align-items-center">
-    <nav class="navbar fixed-bottom d-flex flex-wrap justify-content-between align-items-center border-top align-">
-      <div class="col-12 d-flex justify-content-center">
-      <a class="text-muted" href="{{facebookUrl}}"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a>
-      </div>
-      <div class="row col-12 mt-2 d-flex justify-content-center">
-        <span class="p-2 justify-content-center">&copy; JKI</span>
-      </div>
-  </footer>
+
+  <div class="container-fluid bg-dark mt-3 static-bottom" data-bs-theme="dark">
     
-        
-<!-- No twitter or insta ATM
-          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
-          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
--->
-        </ul>
-      </nav>
+    <nav class="navbar justify-content-center align-items-center border-top align-center">
+      
+      <div class="container-fluid col-12 d-flex justify-content-center">
+      <a href="{{facebookUrl}}"><svg class="bi" width="24" height="24" fill="#4267B2"><use xlink:href="#facebook"/></svg></a>
+      </div>
+      
+      <div class="container-fluid m-2 col-12 d-flex justify-content-center text-bg-dark">
+        JKI - Your Screen Guy
+      </div>
+      
+    </nav>
     
   </div>
-
 </html>
