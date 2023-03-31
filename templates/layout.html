@@ -2,23 +2,14 @@
 <html lang="en-US">
   
   <head>
-<!--bootstrap stuff below-->
+<!--begin bootstrap stuff-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-<!--bootstrap stuff above-->
+<!--end bootstrap stuff-->
     
     <title>JKI - {{addtitle}}</title>
   </head>
-
-  <body>
-    
-<!--bootstrap stuff below-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<!--bootstrap stuff above-->    
-    {% include "symbols.html" %}
-    
-  </body>
 <!--begin top nav-->        
 <nav class="navbar navbar-expand-sm bg-dark" data-bs-theme="dark">
   <div class="container-fluid">
@@ -26,7 +17,7 @@
     <a class="navbar-brand" href="/"><svg class="bi bi-sun" width="30" height="40"><use xlink:href="#sun"/></svg>JKI - Your Screen Guy</a>
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"></span>
     </button>
     
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
@@ -34,13 +25,32 @@
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="/">Home</a>
         <a class="nav-link" href="/gallery">Gallery</a>
+        <!--
         <a class="nav-link" href="/contact">Contact Us</a>
+        -->
       </div>
     </div>
   </div>
 </nav>
 <!--end top nav--> 
+  <body>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-danger" role=alert>
+          {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+  {% endwith %}
+<!--bootstrap stuff below-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<!--bootstrap stuff above-->    
+    {% include "symbols.html" %}
     {% block body %}{% endblock %}
+  </body>
+
+    
     <script src="static/masking.js"></script>
 <!--footer below-->
 
